@@ -1,0 +1,3 @@
+- Use GitHub MCP tools first, [`gh cli`](https://cli.github.com/) as fallback
+- Read GitHub issue and comments with MCP tool before implementing features, if requested
+- Fix MCP errors by verifying correct owner/repository name via `git remote -v`
