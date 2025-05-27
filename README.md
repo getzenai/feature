@@ -8,6 +8,32 @@ This repository contains carefully crafted rules that significantly improve our 
 
 The rules are primarily designed for integration with Roo-Code, but can be adapted for use with other AI coding assistants. Feel free to copy and paste these rules into any system you use for AI-assisted development.
 
+## Custom Instructions Integration
+
+This setup leverages the [roocode custom instructions system](https://docs.roocode.com/features/custom-instructions/), where custom instructions can be organized in the `.roo/rules` and `.roo/modes` folders within your project. The custom instructions system allows you to provide context-specific guidance to AI assistants, ensuring consistent and high-quality code generation tailored to your project's needs.
+
+When you copy the rules from this repository to your project's `.roo/` directory, roocode automatically loads and applies these instructions during AI-assisted coding sessions, making your development workflow more efficient and aligned with your team's best practices.
+
+## GitHub Feature Branch Workflow
+
+The orchestrator rules include a comprehensive GitHub feature branch workflow that coordinates complete feature implementation through structured Git processes. This workflow manages the entire feature lifecycle from initial specification to final merge, with GitHub issues serving as the central communication hub between different AI modes.
+
+- **Issue-Driven Development**: Every feature starts with a detailed GitHub issue that serves as the single source of truth
+- **Mode Coordination**: The Orchestrator delegates tasks to specialized modes (Architect, Code, Review) while maintaining progress tracking
+- **Quality Gates**: Built-in checkpoints ensure tests pass and code reviews are completed before merging
+- **Full Traceability**: Clear links between issues, branches, commits, and pull requests
+
+### Workflow Phases
+
+1. **Specification Evaluation**: Clarify requirements and create detailed GitHub issues
+2. **Feature Branch Creation**: Create properly named feature branches linked to issues
+3. **Implementation**: Code mode implements features with incremental commits
+4. **Code Review**: Review mode performs comprehensive code analysis
+5. **Review Resolution**: Address feedback through iterative improvement cycles
+6. **Merge and Completion**: Merge approved changes and clean up branches
+
+This workflow ensures consistent, high-quality feature delivery with complete audit trails and collaborative transparency. The GitHub MCP tool integration enables seamless automation of branch creation, pull requests, code reviews, and merging processes.
+
 ## Repository Structure
 
 Current structure in this repository:
@@ -85,12 +111,6 @@ These rules are meant to be adapted to your specific workflow and preferences:
 4. Add your own rules based on your team's best practices
 
 While these rules are primarily designed for Roo-Code, you can adapt them for use with any AI coding assistant by copying the relevant content and formatting it appropriately for your tool of choice.
-
-## Rule Categories
-
-- **General Rules**: Core principles applied across all modes
-- **Mode-Specific Rules**: Tailored for specific Roo-Code modes (Architect, Code, Orchestrator)
-- **Technology-Specific Rules**: Best practices for specific frameworks and libraries
 
 ## Contributing
 
