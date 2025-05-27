@@ -1,54 +1,54 @@
-### Playwright Best Practices
+# Playwright Best Practices
 
 See: https://playwright.dev/docs/best-practices
 
-- **Test User-Visible Behavior:**
+## Test User-Visible Behavior
 
-  - Focus on testing what users see and interact with
-  - Avoid testing implementation details
-  - Test against rendered output rather than internal state
-  - Avoid testing third-party dependencies
+- Focus on testing what users see and interact with
+- Avoid testing implementation details
+- Test against rendered output rather than internal state
+- Avoid testing third-party dependencies
 
-- **Test Isolation:**
+## Test Isolation
 
-  - Each test should be completely independent
-  - Use `beforeEach` hooks for common setup
-  - Avoid test dependencies
-  - Consider using setup projects for shared state (e.g., authentication)
-  - Ensure tests have their own local storage, session storage, data, and cookies
+- Each test should be completely independent
+- Use [`beforeEach`](https://playwright.dev/docs/api/class-test#test-before-each) hooks for common setup
+- Avoid test dependencies
+- Consider using setup projects for shared state (e.g., authentication)
+- Ensure tests have their own local storage, session storage, data, and cookies
 
-- **Locator Best Practices:**
+## Locator Best Practices
 
-  - Use built-in locators with auto-waiting capabilities
-  - Prefer user-facing attributes over CSS/XPath selectors
-  - Chain and filter locators for precise element selection
-  - Note that Shadcn `button` components automatically render as `a` elements when provided with an `href` prop
+- Use built-in locators with auto-waiting capabilities
+- Prefer user-facing attributes over CSS/XPath selectors
+- Chain and filter locators for precise element selection
+- Note: Shadcn [`button`](https://ui.shadcn.com/docs/components/button) components automatically render as `a` elements when provided with [`href`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#href) prop
 
-- **Assertions:**
+## Assertions
 
-  - Use web-first assertions that auto-wait for conditions
-  - Implement soft assertions for non-critical checks
-  - Focus on user-visible outcomes
-  - Use assertions that wait until the expected condition is met
+- Use web-first assertions that auto-wait for conditions
+- Implement soft assertions for non-critical checks
+- Focus on user-visible outcomes
+- Use assertions that wait until expected condition is met
 
-- **Test Configuration:**
+## Test Configuration
 
-  - Configure browser projects in the Playwright config
-  - Use TypeScript for better type safety
-  - Implement proper test isolation in configuration
-  - Configure proper timeouts and retries
+- Configure browser projects in Playwright config
+- Use TypeScript for better type safety
+- Implement proper test isolation in configuration
+- Configure proper timeouts and retries
 
-- **Debugging:**
+## Debugging
 
-  - Use trace viewer for CI failures instead of videos/screenshots
-  - Configure traces in the Playwright config file
+- Use trace viewer for CI failures instead of videos/screenshots
+- Configure traces in Playwright config file
 
-- **Cross-Browser Testing:**
+## Cross-Browser Testing
 
-  - Test across all major browsers (Chromium, Firefox, WebKit)
-  - Keep Playwright dependencies up to date
+- Test across all major browsers (Chromium, Firefox, WebKit)
+- Keep Playwright dependencies up to date
 
-- **Performance Optimization:**
+## Performance Optimization
 
-  - Use parallelism and sharding for faster test execution
-  - Configure test projects for different browsers
+- Use parallelism and sharding for faster test execution
+- Configure test projects for different browsers

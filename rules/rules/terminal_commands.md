@@ -1,1 +1,1 @@
-- Prefer terminal commands that run non-interactively (e.g., use flags like `--yes` or avoid commands that require manual prompts) to facilitate automation.
+- Use non-interactive commands with flags like `--yes` to avoid manual prompts
