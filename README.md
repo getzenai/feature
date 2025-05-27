@@ -60,37 +60,70 @@ Current structure in this repository:
 
 ## Getting Started
 
-### 1. Add Rules to Your Project
+### 1. Clone and Install Rules
 
-Copy the rules you want to use into your project's `.roo/` directory:
+Navigate to your project directory and run these commands:
 
 ```bash
-# Create the .roo directory if it doesn't exist
-mkdir -p /path/to/your/project/.roo
+# Clone the repository temporarily into your project
+git clone https://github.com/getzenai/feature.git
 
-# Copy all rules (adjust as needed for specific rule sets)
-cp -r /path/to/this/repo/rules/* /path/to/your/project/.roo/
+# Create the .roo directory if it doesn't exist
+mkdir -p .roo
+
+# Copy all rules to your project
+cp -r feature/rules/* .roo/
+
+# Copy custom modes
+cp feature/modes/.roomodes .
+
+# Clean up - remove the cloned repository
+rm -rf feature
 ```
 
 When copied to your project, the structure will be similar but with `.roo/` as the root folder instead of `rules/`. For example, what is `rules/rules/` here will become `.roo/rules/` in your project.
 
-### 2. Add Custom Modes
+### 2. Customize Rules for Your Project
 
-To add the custom modes to your Roo-Code instance:
+After installation, adapt the rules to your specific needs:
 
-**Option 1:** If you don't have a `.roomodes` file yet:
+#### General Rules
+
+The rules in `.roo/rules/` apply to all modes and can be used as-is or customized for your workflow.
+
+#### Mode-Specific Rules
+
+- **`.roo/rules-architect/`** - Rules specific to Architect mode
+- **`.roo/rules-code/`** - Rules specific to Code mode
+- **`.roo/rules-orchestrator/`** - Rules specific to Orchestrator mode
+
+#### Technology-Specific Rules
+
+The `.roo/technology-specific-rules/` folder contains rules for specific technologies. You have two options:
+
+**Option A: Move to mode-specific folders**
 
 ```bash
-cp /path/to/this/repo/modes/.roomodes /path/to/your/project/
+# Example: Move Python rules to Code mode
+mv .roo/technology-specific-rules/python/* .roo/rules-code/
 ```
 
-**Option 2:** If you already have a `.roomodes` file:
+**Option B: Move to general rules**
 
-- Copy the content from this repository's `.roomodes` file
-- Add it to your existing `.roomodes` file
-- If your existing file uses the old JSON format, convert it to YAML first (you can ask Roo-Code to do this for you)
+```bash
+# Move all technology rules to general rules folder
+mv .roo/technology-specific-rules/* .roo/rules/
+```
 
-### 3. Start with Repository Analysis
+### 3. Handle Existing `.roomodes` File
+
+If you already have a `.roomodes` file in your project:
+
+1. Back up your existing file: `cp .roomodes .roomodes.backup`
+2. Merge the content from the new `.roomodes` file with your existing one
+3. If your existing file uses the old JSON format, convert it to YAML first (you can ask Roo-Code to do this for you)
+
+### 4. Start with Repository Analysis
 
 We recommend starting with the Codebase Analyzer mode to create a comprehensive overview of your repository:
 
@@ -109,6 +142,8 @@ These rules are meant to be adapted to your specific workflow and preferences:
 2. Keep what works for your team
 3. Modify or remove what doesn't fit your needs
 4. Add your own rules based on your team's best practices
+
+**💡 Protip**: Ask your coding agent to help adapt existing rules or create new ones based on your chat history. When you notice patterns in how you work together or areas where the agent could perform better, you can say something like "Based on our conversation, can you create a rule that will help you implement similar tasks more effectively next time?" This iterative approach helps build a personalized rule set that improves over time.
 
 While these rules are primarily designed for Roo-Code, you can adapt them for use with any AI coding assistant by copying the relevant content and formatting it appropriately for your tool of choice.
 
