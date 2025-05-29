@@ -10,13 +10,13 @@ The rules are primarily designed for integration with Roo-Code, but can be adapt
 
 ## Custom Instructions Integration
 
-This setup leverages the [roocode custom instructions system](https://docs.roocode.com/features/custom-instructions/), where custom instructions can be organized in the `.roo/rules` and `.roo/modes` folders within your project. The custom instructions system allows you to provide context-specific guidance to AI assistants, ensuring consistent and high-quality code generation tailored to your project's needs.
+This setup leverages the [Roo-Code custom instructions system](https://docs.roocode.com/features/custom-instructions/), where custom instructions can be organized in the `.roo/rules` folders and `.roomodes` file within your project. The custom instructions system allows you to provide context-specific guidance to AI assistants, ensuring consistent and high-quality code generation tailored to your project's needs.
 
 When you copy the rules from this repository to your project's `.roo/` directory, roocode automatically loads and applies these instructions during AI-assisted coding sessions, making your development workflow more efficient and aligned with your team's best practices.
 
 ## GitHub Feature Branch Workflow
 
-The orchestrator rules include a comprehensive GitHub feature branch workflow that coordinates complete feature implementation through structured Git processes. This workflow manages the entire feature lifecycle from initial specification to final merge, with GitHub issues serving as the central communication hub between different AI modes.
+The orchestrator rules include a comprehensive GitHub feature branch workflow, described in detail in [`rules/rules-orchestrator/feature-branch-workflow.md`](rules/rules-orchestrator/feature-branch-workflow.md:0), that coordinates complete feature implementation through structured Git processes. This workflow manages the entire feature lifecycle from initial specification to final merge, with GitHub issues serving as the central communication hub between different AI modes. It relies on the [`rules/rules-architect/github_issue_specification.md`](rules/rules-architect/github_issue_specification.md:0) template, where implementation steps and the test plan are described to provide better guidance for the coding model.
 
 - **Issue-Driven Development**: Every feature starts with a detailed GitHub issue that serves as the single source of truth
 - **Mode Coordination**: The Orchestrator delegates tasks to specialized modes (Architect, Code, Review) while maintaining progress tracking
